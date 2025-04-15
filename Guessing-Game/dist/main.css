@@ -1,0 +1,447 @@
+:root {
+  /* Color pallete */
+  --primary-color: #f1f1f1;
+  --secondary-color: #0c0c0f;
+  --accent-1: #2196f3;
+  --accent-2: #228b22;
+  /* Colors */
+  --bg-color: #0c0c0f;
+  /* Background colors for buttons */
+  --easy-btn-bg: #4caf50;
+  --medium-btn-bg: #d32f2f;
+  --hard-btn-bg: #2196f3;
+  --expert-btn-bg: #e91e63;
+  /* Font styles | Family */
+  --text-italic: "Open Sans Italic";
+  --text-light: "Open Sans Light";
+  --text-regular: "Open Sans Regular";
+  --text-semibold: "Open Sans semibold";
+  --text-bold: "Open Sans bold";
+}
+
+/*
+Font hosting with @font-face
+*/
+/* Import custom font families with different weights and styles */
+/* Italic font */
+@font-face {
+  font-family: "Open Sans Italic";
+  src: local("Open Sans Italic"), local("OpenSans-Italic");
+  src: url("../assets/fonts/OpenSans-Italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+/* Light font with weight 200 */
+@font-face {
+  font-family: "Open Sans Light";
+  src: local("Open Sans Light"), local("OpenSans-Light");
+  src: url("../assets/fonts/OpenSans-Light-webfont.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+/* Regular font */
+@font-face {
+  font-family: "Open Sans Regular";
+  src: local("Open Sans Regular"), local("OpenSans-Regular");
+  src: url("../assets/fonts/OpenSans-Regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* Semibold font with weight 500 */
+@font-face {
+  font-family: "Open Sans Semibold";
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold");
+  src: url("../assets/fonts/OpenSans-Semibold-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+/* Bold font */
+@font-face {
+  font-family: "Open Sans Bold";
+  src: local("Open Sans Bold"), local("OpenSans-Bold");
+  src: url("../assets/fonts/OpenSans-Bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+/* Set default font-family for all elements */
+*,
+*::before,
+*::after {
+  font-family: "Open Sans Regular";
+}
+
+/* Set up basic styles for the page */
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--bg-color);
+}
+
+/* Reset padding, margin, and font color for all elements */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+/* This function maps the given label to a corresponding button background color. */
+/* This mixin centers an element within a column using Flexbox. */
+/* This mixin provides default button styles for a guessing game. */
+.default-btn {
+  width: 100%;
+  padding: 0.6rem 1.3rem;
+  font-family: var(--text-regular);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  border-radius: 0.313rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--accent-1);
+}
+.default-btn:disabled {
+  cursor: not-allowed;
+  background-color: #e5e5e5;
+  color: #a6a6a6;
+}
+
+.difficulty-btn-1 {
+  width: 100%;
+  padding: 0.6rem 1.3rem;
+  font-family: var(--text-regular);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  border-radius: 0.313rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--easy-btn-bg);
+}
+.difficulty-btn-1:disabled {
+  cursor: not-allowed;
+  background-color: #e5e5e5;
+  color: #a6a6a6;
+}
+
+.difficulty-btn-2 {
+  width: 100%;
+  padding: 0.6rem 1.3rem;
+  font-family: var(--text-regular);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  border-radius: 0.313rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--medium-btn-bg);
+}
+.difficulty-btn-2:disabled {
+  cursor: not-allowed;
+  background-color: #e5e5e5;
+  color: #a6a6a6;
+}
+
+.difficulty-btn-3 {
+  width: 100%;
+  padding: 0.6rem 1.3rem;
+  font-family: var(--text-regular);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  border-radius: 0.313rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--hard-btn-bg);
+}
+.difficulty-btn-3:disabled {
+  cursor: not-allowed;
+  background-color: #e5e5e5;
+  color: #a6a6a6;
+}
+
+.difficulty-btn-4 {
+  width: 100%;
+  padding: 0.6rem 1.3rem;
+  font-family: var(--text-regular);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  border-radius: 0.313rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: var(--expert-btn-bg);
+}
+.difficulty-btn-4:disabled {
+  cursor: not-allowed;
+  background-color: #e5e5e5;
+  color: #a6a6a6;
+}
+
+.gg-tooltip-easy {
+  position: relative;
+}
+.gg-tooltip-easy::before {
+  content: "Difficulty: Easy \aNumber range: 10 \aTime limit: 15 mins";
+  display: none;
+  position: absolute;
+  width: 150px;
+  max-width: 100%;
+  top: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+.gg-tooltip-easy:hover::before {
+  display: block;
+}
+
+.gg-tooltip-medium {
+  position: relative;
+}
+.gg-tooltip-medium::before {
+  content: "Difficulty: Medium \aNumber range: 30 \aTime limit: 10 mins";
+  display: none;
+  position: absolute;
+  width: 150px;
+  max-width: 100%;
+  top: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+.gg-tooltip-medium:hover::before {
+  display: block;
+}
+
+.gg-tooltip-hard {
+  position: relative;
+}
+.gg-tooltip-hard::before {
+  content: "Difficulty: Hard \aNumber range: 100 \aTime limit: 4 mins";
+  display: none;
+  position: absolute;
+  width: 150px;
+  max-width: 100%;
+  top: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+.gg-tooltip-hard:hover::before {
+  display: block;
+}
+
+.gg-tooltip-expert {
+  position: relative;
+}
+.gg-tooltip-expert::before {
+  content: "Difficulty: Expert \aNumber range: 1000 \aTime limit: 2 mins";
+  display: none;
+  position: absolute;
+  width: 150px;
+  max-width: 100%;
+  top: 50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+.gg-tooltip-expert:hover::before {
+  display: block;
+}
+
+.gg-input {
+  width: 150px;
+  max-width: 100%;
+  padding: 0.3em 0.5em;
+  font-size: 1.5rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid var(--primary-color);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.gg-input:focus {
+  border-bottom: 2px solid var(--accent-1); /* Change border color */
+  outline: none; /* Remove default outline */
+}
+.gg-input:disabled {
+  border-bottom: 2px solid #e9e9e9; /* Change background color */
+  opacity: 0.5; /* Adjust opacity */
+  cursor: not-allowed; /* Change cursor to indicate input is disabled */
+}
+
+/* This function maps the given label to a corresponding button background color. */
+/* This mixin centers an element within a column using Flexbox. */
+/* This mixin provides default button styles for a guessing game. */
+/* Import functions file */
+/* HEADER */
+.header {
+  display: grid;
+  place-items: center center;
+  padding: 0.938rem 0;
+  /* HEADER CONTENT */
+}
+.header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.563rem;
+  /* HEADER TITLE */
+  /* HEADER SUBTITLE */
+}
+.header__content__title {
+  font-size: 3.125rem;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+}
+.header__content__subtitle {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.header__content__subtitle:hover {
+  color: #cfcfcf;
+}
+
+/* MAIN */
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 6rem;
+  padding: 0.8rem;
+  /* DIFFICULTY CONTAINER */
+  /* Let's Playe container */
+}
+.main__difficulty-container {
+  width: 100%;
+  max-width: 37.5rem;
+  padding: 0.4rem;
+  /* DIFFICULTY TITLE */
+  /* DIFFICULTY OPTIONS CONTAINER */
+}
+.main__difficulty-container__title h2 {
+  color: var(--primary-color);
+  font-family: var(--text-light);
+}
+.main__difficulty-container__options-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2rem;
+  gap: 0.9rem;
+}
+.main__play-container {
+  width: 100%;
+  max-width: 37.5rem;
+  padding: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
+}
+.main__play-container__btn #playBtn {
+  font-family: var(--text-semibold);
+  -webkit-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.main__play-container__btn #playBtn:not(:disabled):hover {
+  background-color: #1565c0;
+}
+
+/* This function maps the given label to a corresponding button background color. */
+/* This mixin centers an element within a column using Flexbox. */
+/* This mixin provides default button styles for a guessing game. */
+.main-playground {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding: 0.8rem;
+}
+.main-playground__instruction-container__label {
+  font-size: 1.3rem;
+}
+.main-playground__instruction-container__label h2 {
+  font-family: var(--text-light);
+}
+.main-playground__randnum-container__correct-answer {
+  padding: 0.3rem 3rem;
+  border-radius: 0.313rem;
+  background-color: var(--accent-1);
+}
+.main-playground__randnum-container__correct-answer h2 {
+  font-size: 2rem;
+}
+.main-playground__input-container {
+  margin-top: 2rem;
+}
+.main-playground__input-container__submit-answer {
+  margin-top: 2rem;
+}/*# sourceMappingURL=main.css.map */

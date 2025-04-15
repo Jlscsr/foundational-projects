@@ -1,0 +1,107 @@
+:root {
+  --font-color: rgb(242, 242, 242);
+  --numBtns-bg: rgb(92, 185, 228);
+  --operatorBtn-bg: rgb(241, 84, 18);
+  --border-color: rgb(92, 184, 228);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(24, 24, 24);
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+header {
+  text-align: center;
+  width: 100%;
+  min-height: 20vh;
+  color: var(--font-color);
+}
+
+header > h1 {
+  margin: 10px 0;
+  font-size: clamp(1.4rem, 8vw, 3rem);
+  font-weight: 400;
+}
+
+header > p {
+  font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+  margin-top: 20px;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+}
+
+form {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+form > input {
+  width: 100%;
+  height: 50px;
+  font-size: 2.4rem;
+  color: var(--font-color);
+  text-align: right;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+/* BUTTONS */
+.calculatorButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.12em;
+  border: 0;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  height: 70px;
+  font-weight: 400;
+  font-size: 1rem;
+  background-color: var(--numBtns-bg);
+  color: #fff;
+  border: none;
+}
+
+.btn:hover {
+  background-color: rgba(92, 185, 228, 0.726);
+}
+
+.opBtn {
+  background-color: var(--operatorBtn-bg);
+}
+
+.opBtn:hover {
+  background-color: rgba(241, 85, 18, 0.726);
+}
+#clear {
+  grid-column: 1 / span 2;
+}
+
+.zero-span {
+  grid-column: 1 / span 3;
+}

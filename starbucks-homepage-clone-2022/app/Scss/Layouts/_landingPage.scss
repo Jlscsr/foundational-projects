@@ -1,0 +1,42 @@
+@use "../variables";
+
+.main {
+  &__landing-page {
+    width: 100%;
+    height: 75vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__text-container {
+      display: inline-block;
+      position: relative;
+      top: 11.5em;
+      left: 15em;
+      padding: 1em;
+
+      &__title {
+        margin-bottom: 3.3em;
+        & > h1 {
+          font-size: 4.4rem;
+          color: white;
+        }
+      }
+
+      &__btn-link {
+        & > a {
+          padding: 0.5em 1em;
+          font-weight: bold;
+          color: white;
+          border: 1px solid white;
+          border-radius: 20px;
+          transition: all 0.1s ease;
+
+          &:hover {
+            background-color: rgba(216, 211, 211, 0.193);
+          }
+        }
+      }
+    }
+  }
+}

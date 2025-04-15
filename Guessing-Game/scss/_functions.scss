@@ -1,0 +1,59 @@
+/* This function maps the given label to a corresponding button background color. */
+@function setBgColor($label) {
+  /* Check the given label and return the corresponding button background color variable. */
+  @if $label == "easy" {
+    @return var(--easy-btn-bg);
+  } @else if $label == "medium" {
+    @return var(--medium-btn-bg);
+  } @else if $label == "hard" {
+    @return var(--hard-btn-bg);
+  } @else {
+    @return var(--expert-btn-bg);
+  }
+}
+
+/* This mixin centers an element within a column using Flexbox. */
+@mixin columnCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: 37.5rem;
+  padding: 0.4rem;
+}
+
+@mixin gridTemplateColumn($value) {
+  display: grid;
+  grid-template-columns: repeat($value, 1fr);
+}
+
+/* This mixin provides default button styles for a guessing game. */
+@mixin btnStyle() {
+  width: 100%;
+  padding: 0.6rem 1.3rem;
+  font-family: var(--text-regular);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  border-radius: 0.313rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  @content;
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #e5e5e5;
+    color: #a6a6a6;
+  }
+}

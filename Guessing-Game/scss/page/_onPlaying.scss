@@ -1,0 +1,34 @@
+@import "../functions";
+.main-playground {
+  @include columnCenter;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding: 0.8rem;
+  &__instruction-container {
+    // TODO Continue the styling
+    &__label {
+      font-size: 1.3rem;
+      h2 {
+        font-family: var(--text-light);
+      }
+    }
+  }
+
+  &__randnum-container {
+    &__correct-answer {
+      padding: 0.3rem 3rem;
+      border-radius: 0.313rem;
+      background-color: var(--accent-1);
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__input-container {
+    margin-top: 2rem;
+    &__submit-answer {
+      margin-top: 2rem;
+    }
+  }
+}

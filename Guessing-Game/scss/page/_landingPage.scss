@@ -1,0 +1,79 @@
+@import "../functions";
+/* Import functions file */
+
+/* HEADER */
+.header {
+  display: grid;
+  place-items: center center;
+  padding: 0.938rem 0;
+
+  /* HEADER CONTENT */
+  &__content {
+    @include columnCenter;
+    gap: 0.563rem;
+
+    /* HEADER TITLE */
+    &__title {
+      font-size: 3.125rem;
+      letter-spacing: 2px;
+      color: var(--primary-color);
+    }
+
+    /* HEADER SUBTITLE */
+    &__subtitle {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: all 0.2s ease-out;
+      &:hover {
+        color: #cfcfcf;
+      }
+    }
+  }
+}
+
+/* MAIN */
+.main {
+  @include columnCenter;
+  margin-top: 6rem;
+  padding: 0.8rem;
+
+  /* DIFFICULTY CONTAINER */
+  &__difficulty-container {
+    @include container;
+
+    /* DIFFICULTY TITLE */
+    &__title {
+      h2 {
+        color: var(--primary-color);
+        font-family: var(--text-light);
+      }
+    }
+
+    /* DIFFICULTY OPTIONS CONTAINER */
+    &__options-container {
+      @include gridTemplateColumn(4);
+      margin-top: 2rem;
+      gap: 0.9rem;
+    }
+  }
+
+  &__play-container {
+    @include container;
+    @include flexCenter;
+    margin-top: 2rem;
+
+    &__btn {
+      #playBtn {
+        font-family: var(--text-semibold);
+        transition: all 0.1s ease-out;
+
+        &:not(:disabled):hover {
+          background-color: #1565c0;
+        }
+      }
+    }
+  }
+
+  /* Let's Playe container */
+}

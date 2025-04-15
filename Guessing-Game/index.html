@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/main.css">
+    <script defer src="./script/landingPage.js"></script>
+    <title>Guessing Game</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__content">
+            <h1 class="header__content__title">Guessing Game</h1>
+            <a href="https://github.com/Jlscsr/Guessing-Game" target="_blank" class="header__content__subtitle">by:
+                Julius Raagas</a>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Difficulty Section -->
+        <section class="main__difficulty-container">
+            <div class="main__difficulty-container__title">
+                <h2>Choose difficulty</h2>
+            </div>
+            <div class="main__difficulty-container__options-container">
+                <!-- Easy button -->
+                <div class="main__difficulty-container__options-container__easy gg-tooltip-easy">
+                    <button id="easyBtn" class="difficulty-btn-1 dfBtn" value="easy"
+                        aria-label="Easy difficulty button">Easy</button>
+                </div>
+                <!-- Medium button -->
+                <div class="main__difficulty-container__options-container__easy gg-tooltip-medium">
+                    <button id="medBtn" class="difficulty-btn-2 dfBtn" value="medium"
+                        aria-label="Medium difficulty button">Medium</button>
+                </div>
+                <!-- Hard button -->
+                <div class="main__difficulty-container__options-container__easy gg-tooltip-hard">
+                    <button id="hardBtn" class="difficulty-btn-3 dfBtn" value="hard"
+                        aria-label="Hard difficulty button">Hard</button>
+                </div>
+                <!-- expert button -->
+                <div class="main__difficulty-container__options-container__easy gg-tooltip-expert">
+                    <button id="expBtn" class="difficulty-btn-4 dfBtn" value="expert"
+                        aria-label="Expert difficulty button">Expert</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Play button -->
+        <section class="main__play-container">
+            <div class="main__play-container__btn">
+                <button id="playBtn" class="default-btn" aria-label="Start the game">Let's Play!🙌</button>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+@use "../variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 13.5vh;
+  padding-inline: 1rem;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    width: min(100% - 1rem, 1280px);
+    margin-inline: auto;
+
+    &__logo {
+      width: 51px;
+      margin-right: 2.5em;
+    }
+
+    &__nav-items {
+      display: flex;
+      align-items: center;
+      gap: 1.35em;
+
+      &__list-item {
+        font-size: 0.88rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+
+        &__nav-links {
+          &:hover {
+            color: green;
+          }
+        }
+      }
+    }
+
+    &__nav-items-form {
+      margin-left: auto;
+
+      &__list-item {
+        &__nav-links-store {
+          letter-spacing: 0px;
+          margin-right: 1.5em;
+        }
+
+        &__nav-links-sign-in {
+          letter-spacing: 0px;
+          padding: 0.5em 1.1em;
+          border: 1px solid black;
+          border-radius: 40px;
+          transition: all 0.1s ease;
+
+          &:hover {
+            color: black;
+            background-color: variables.$button-hover-effect;
+          }
+        }
+
+        &__nav-links-join-now {
+          padding: 0.5em 1.1em;
+          color: white;
+          letter-spacing: 0px;
+          border: 1px solid black;
+          border-radius: 40px;
+          background-color: black;
+          transition: all 0.1s ease;
+
+          &:hover {
+            color: white;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

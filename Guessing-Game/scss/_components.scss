@@ -1,0 +1,87 @@
+// Import functions from a separate file
+@import "./functions";
+
+// Map of button labels and their corresponding values
+$label: (
+  "1": "easy",
+  "2": "medium",
+  "3": "hard",
+  "4": "expert",
+);
+
+$instruction: (
+  "easy": "Difficulty: Easy \A Number range: 10 \A Time limit: 15 mins",
+  "medium": "Difficulty: Medium \A Number range: 30 \A Time limit: 10 mins",
+  "hard": "Difficulty: Hard \A Number range: 100 \A Time limit: 4 mins",
+  "expert": "Difficulty: Expert \A Number range: 1000 \A Time limit: 2 mins",
+);
+// Default button st
+.default-btn {
+  // Use the btnStyle mixin defined in the imported functions file
+  @include btnStyle();
+
+  // Set the background color to a custom accent color
+  background-color: var(--accent-1);
+}
+
+// Difficulty buttons styles generated using a loop
+@each $key, $value in $label {
+  .difficulty-btn-#{$key} {
+    // Use the btnStyle mixin defined in the imported functions file
+    @include btnStyle();
+
+    // Set the background color based on the label value using the setBgColor function
+    background-color: setBgColor($value);
+  }
+}
+
+@each $key, $value in $instruction {
+  .gg-tooltip-#{$key} {
+    position: relative;
+
+    &::before {
+      content: "#{$value}";
+      display: none;
+      position: absolute;
+      width: 150px;
+      max-width: 100%;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border-radius: 5px;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+
+    &:hover::before {
+      display: block;
+    }
+  }
+}
+
+.gg-input {
+  width: 150px;
+  max-width: 100%;
+  padding: 0.3em 0.5em;
+  font-size: 1.5rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid var(--primary-color);
+  transition: all 0.3s ease-out;
+
+  &:focus {
+    border-bottom: 2px solid var(--accent-1); /* Change border color */
+    outline: none; /* Remove default outline */
+  }
+
+  &:disabled {
+    border-bottom: 2px solid #e9e9e9; /* Change background color */
+    opacity: 0.5; /* Adjust opacity */
+    cursor: not-allowed; /* Change cursor to indicate input is disabled */
+  }
+}

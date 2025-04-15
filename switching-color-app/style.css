@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.container > h1,
+.container > h3 {
+  color: #d2dae2;
+}
+
+.container .color-diplay-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35em;
+  height: 20em;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  border: 5px solid #feca57;
+  border-radius: 10px;
+  background-color: black;
+  transition: background-color 0.3s;
+}
+
+.container .color-diplay-container > p {
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+.container .button-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 55px;
+  row-gap: 20px;
+}
+
+.container .button-container > button {
+  padding: 10px 30px;
+  border: 2px solid #feca57;
+  border-radius: 10px;
+  background-color: #006366a8;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+
+.container .button-container > button:hover {
+  opacity: 0.7;
+}

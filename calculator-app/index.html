@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <title>CALCULATOR</title>
+</head>
+
+<body>
+    <header>
+        <h1>MY SIMPLE CALCULATOR</h1>
+        <p>By: Julius Raagas</p>
+    </header>
+
+    <main>
+        <section class="calculator">
+            <form>
+                <input type="text" id="screen" disabled />
+            </form>
+
+            <div class="calculatorButtons">
+
+                <!-- INPUT ACTIONS -->
+                <button type="button" class="btn opBtn" id="clear" data-calc="ac">C</button>
+                <button type="button" class="btn opBtn" id="del" data-calc="del">&larr;</button>
+                
+                <!-- OPERATORS -->
+
+
+                <!-- NUMBERS -->
+                <button type="button" class="btn opBtn" id="calcButton" data-calc="/">&divide;</button>
+                <button type="button" class="btn" id="calcButton" data-calc="9">9</button>
+                <button type="button" class="btn" id="calcButton" data-calc="8">8</button>
+                <button type="button" class="btn" id="calcButton" data-calc="7">7</button>
+                <button type="button" class="btn opBtn" id="calcButton" data-calc="*">*</button>
+                <button type="button" class="btn" id="calcButton" data-calc="6">6</button>
+                <button type="button" class="btn" id="calcButton" data-calc="5">5</button>
+                <button type="button" class="btn" id="calcButton" data-calc="4">4</button>
+                <button type="button" class="btn opBtn" id="calcButton" data-calc="-">-</button>
+                <button type="button" class="btn" id="calcButton" data-calc="3">3</button>
+                <button type="button" class="btn" id="calcButton" data-calc="2">2</button>
+                <button type="button" class="btn" id="calcButton" data-calc="1">1</button>
+                <button type="button" class="btn opBtn" id="calcButton" data-calc="+">+</button>
+                <button type="button" class="btn zero-span" id="calcButton" data-calc="0">0</button>
+
+                <button type="button" class="btn opBtn" id="equal" data-calc="=">=</button>
+
+
+
+            </div>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+
+</html>
